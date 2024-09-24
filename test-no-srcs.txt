@@ -1,0 +1,2 @@
+<img class="mntl-lightbox__img"/>
+no of no src: 1

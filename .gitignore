@@ -1,0 +1,6 @@
+imgs*
+*.jpg
+*.png
+sites.txt
+venv
+venv/*
