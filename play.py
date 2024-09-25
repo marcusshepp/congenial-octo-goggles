@@ -1,6 +1,8 @@
 from playwright.sync_api import sync_playwright
 from bs4 import BeautifulSoup as bs
-import requests, string, random
+import requests
+import string
+import random
 
 ua = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -11,13 +13,16 @@ ua = (
 
 def get_urls_from_file():
     urls = []
+
     with open('sites.txt', 'r') as f:
         lines = [line.rstrip() for line in f if not line.startswith('#')]
         urls = lines
     return urls
 
+
 def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
+
 
 def extract_img_src_from_tag(img_tags):
     srcs = []
@@ -50,6 +55,7 @@ def extract_img_src_from_tag(img_tags):
     print('has no src: {}'.format(len(no_srcs)))
     return srcs
 
+
 def write_imgs_to_files(src_urls):
     count_files_written = 0
     for src in src_urls:
@@ -81,5 +87,6 @@ def main():
             number_of_files_created = write_imgs_to_files(srcs)
             count_files_written += number_of_files_created
     print('images created: {}'.format(count_files_written))
+
 
 main()
