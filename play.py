@@ -86,6 +86,7 @@ def main():
             srcs = extract_img_src_from_tag(img_tags)
             number_of_files_created = write_imgs_to_files(srcs)
             count_files_written += number_of_files_created
+    print()
     print('images created: {}'.format(count_files_written))
 
 
