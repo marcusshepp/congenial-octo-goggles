@@ -87,6 +87,7 @@ def main():
             number_of_files_created = write_imgs_to_files(srcs)
             count_files_written += number_of_files_created
     print()
+    print()
     print('images created: {}'.format(count_files_written))
 
 
